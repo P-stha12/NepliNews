@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-3$b8(4qukgrr^0j-q5-v4k+g2dfasdfooqz&^14gqm*d4454!*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'neplinews.herokuapp.com/']
+ALLOWED_HOSTS = ['127.0.0.1', 'neplinews.herokuapp.com']
 
 
 # Application definition
