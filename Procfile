@@ -1,1 +1,1 @@
-web: gunicorn aggragator.wsgi --log-file -
+web: gunicorn NepliNews.wsgi --log-file -
