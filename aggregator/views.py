@@ -19,7 +19,7 @@ def ratopati():
         div = article.find('div', {'class':'item-content'})
         d['title'] = div.find('a').text
         d['news_link'] = div.find('a').attrs['href']
-        d['news_link'] = 'ratopati.com' + d['news_link']
+        d['news_link'] = 'https://ratopati.com' + d['news_link']
         news.append(d)
     return news
 
