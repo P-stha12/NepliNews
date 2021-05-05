@@ -26,7 +26,7 @@ def ratopati():
 
 def news24():
     news = []
-    req = requests.get('https://www.news24nepal.tv/category/%e0%a4%b8%e0%a5%8d%e0%a4%b5%e0%a4%be%e0%a4%b8%e0%a5%8d%e0%a4%a5%e0%a5%8d%e0%a4%af')
+    req = requests.get('https://bit.ly/3vJArGQ')
     soup = BeautifulSoup(req.content, 'lxml')
     articles = soup.find_all('div', {'class':'col-md-12'})[1:10]
     for article in articles:
