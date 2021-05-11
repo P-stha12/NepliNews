@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 def ratopati():
     news = []
     req = requests.get('http://ratopati.com/category/coronavirus')
-    soup = BeautifulSoup(req.link, 'lxml')
+    soup = BeautifulSoup(req.text, 'lxml')
     articles = soup.find_all('div', {'class':'item'})[0:10]
     for article in articles:
         d = {}
