@@ -23,6 +23,21 @@ def ratopati():
         news.append(d)
     return news
 
+def ekantipur():
+    news = []
+    req = requests.get('https://covid19.ekantipur.com/')
+    soup = BeautifulSoup(req.content, 'lxml')
+    articles = soup.find_all('article', {'class':'normal'})[0:10]
+    for article in articles:
+        d = {}
+        d['source'] = 'e-Kantipur'
+        d['img_link'] = article.find('figure').find('a').attrs['href']
+        div = article.find('div', {'class':'teaser'})
+        d['content'] = div.find('p').text
+        d['title'] = div.find('a').text
+        d['news_link'] = div.find('a').attrs['href']
+        news.append(d)
+    return news
 
 def news24():
     news = []
@@ -42,6 +57,6 @@ def news24():
 
 
 def home(request):
-    news = ratopati() + news24()
+    news = ratopati() + news24() + ekantipur()
     random.shuffle(news)
     return render(request, 'aggregator/index.html', {'articles': news})
