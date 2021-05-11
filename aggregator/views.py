@@ -31,7 +31,7 @@ def ekantipur():
     for article in articles:
         d = {}
         d['source'] = 'e-Kantipur'
-        d['img_link'] = article.find('figure').find('a').attrs['href']
+        d['img_link'] = article.find('figure').find('a').find('img').attrs['data-src']
         div = article.find('div', {'class':'teaser'})
         d['content'] = div.find('p').text
         d['title'] = div.find('a').text
