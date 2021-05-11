@@ -27,7 +27,7 @@ def ratopati():
 def news24():
     news = []
     req = requests.get('https://bit.ly/3vJArGQ')
-    soup = BeautifulSoup(req.content, 'lxml')
+    soup = BeautifulSoup(req.text, 'lxml')
     articles = soup.find_all('div', {'class':'col-md-12'})[1:10]
     for article in articles:
         d = {}
